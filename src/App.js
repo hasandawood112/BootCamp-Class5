@@ -1,25 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Parent from './Parent';
+import counterContext from './CounterContext';
 
 function App() {
+
+  var countState = useState(0);
+  let [isDark, setDark] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <counterContext.Provider value={countState}>
+
+      <div className="App">
+          <div className={`lightTheme ${isDark ? 'darkTheme' : ''}`}>
+
+            <h1>Theme : {isDark ? 'Dark' : 'Light'}</h1>
+            <button onClick={() => setDark(!isDark)}>change theme</button>
+
+            <Parent />
+
+          </div>
+      </div>
+    </counterContext.Provider>
   );
 }
 
