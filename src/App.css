@@ -70,6 +70,11 @@ button {
   padding: 10px 20px 10px 20px;
 }
 
-button:hover{
+button:hover {
   background-color: lightgray;
+}
+
+.btnSmall {
+  font-size: 15px;
+  padding: 5px 8px 5px 8px;
 }

@@ -3,18 +3,19 @@ import counterReducer from './CounterReducer';
 
 const Child2 = () => {
 
-    let [state, dispatch] = useReducer(counterReducer, 10);
+    let [state, dispatch] = useReducer(counterReducer, 0);
 
     return (
         <div>
             <h1>Counter using Reducer</h1>
-            <h3>Counter : {state}</h3>
-            <button onClick={() => dispatch('INCREASE')}>
-                increase
-                </button>
+            <h2>{state}</h2>
 
             <button onClick={() => dispatch('DECREASE')}>
                 Decrease
+                </button>
+
+            <button onClick={() => dispatch('INCREASE')}>
+                Increase
                 </button>
 
             <button onClick={() => dispatch('RESET')}>

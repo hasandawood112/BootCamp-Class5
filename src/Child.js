@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import counterContext from './CounterContext';
 
 const Child = () => {
@@ -8,15 +8,18 @@ const Child = () => {
     return (
         <div>
             <h1>Counter using Context</h1>
-            <h3>Counter : {counterValue}</h3>
-            <button onClick={()=> {counterValue[1](++counterValue[0])}}>
-                    Increase
+            <h2>{counterValue}</h2>
+
+            <button onClick={() => { counterValue[1](--counterValue[0]) }}>
+                Decrease
             </button>
-            <button onClick={()=> {counterValue[1](--counterValue[0])}}>
-                    Decrease
+
+            <button onClick={() => { counterValue[1](++counterValue[0]) }}>
+                Increase
             </button>
-            <button onClick={()=> {counterValue[1](counterValue[0] - counterValue[0])}}>
-                    Reset
+
+            <button onClick={() => { counterValue[1](counterValue[0] - counterValue[0]) }}>
+                Reset
             </button>
         </div>
     );

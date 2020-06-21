@@ -14,14 +14,15 @@ function App() {
     <counterContext.Provider value={countState}>
 
       <div className="App">
-          <div className={`lightTheme ${isDark ? 'darkTheme' : ''}`}>
+        <div className={`lightTheme ${isDark ? 'darkTheme' : ''}`}>
 
-            <h1>Theme : {isDark ? 'Dark' : 'Light'}</h1>
-            <button onClick={() => setDark(!isDark)}>change theme</button>
+          <p>Theme : {isDark ? 'Dark' : 'Light'}</p>
+          <button className="btnSmall" onClick={() => setDark(!isDark)}>change theme</button>
+          
 
-            <Parent />
+          <Parent />
 
-          </div>
+        </div>
       </div>
     </counterContext.Provider>
   );
